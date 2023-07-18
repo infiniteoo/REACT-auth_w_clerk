@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { auth } from "@clerk/nextjs";
+import { auth, UserButton } from "@clerk/nextjs";
 
 const Header = () => {
   const { userId } = auth();
@@ -33,6 +33,9 @@ const Header = () => {
               </Link>
             </>
           )}
+          <div className="ml-auto">
+            <UserButton afterSignOutUrl="/"/>
+          </div>
         </div>
       </nav>
     </div>
